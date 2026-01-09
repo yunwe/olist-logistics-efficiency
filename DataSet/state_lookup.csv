@@ -1,28 +1,28 @@
-index,state,acronym
-0,São Paulo,SP
-1,Rio de Janeiro,RDJ
-2,Distrito Federal,DF
-3,Ceará,C
-4,Bahia,B
-5,Minas Gerais,MG
-6,Amazonas,A
-7,Paraná,P
-8,Pernambuco,P
-9,Goiás,G
-10,Pará,P
-11,Rio Grande do Sul,RGDS
-14,Maranhão,M
-15,Alagoas,A
-16,Mato Grosso do Sul,MGDS
-18,Piauí,P
-19,Paraíba,P
-23,Rio Grande do Norte,RGDN
-30,Mato Grosso,MG
-32,Santa Catarina,SC
-35,Sergipe,S
-38,Espírito Santo,ES
-43,Rondônia,R
-48,Amapá,A
-49,Roraima,R
-68,Acre,A
-88,Tocantins,T
+state,acronym
+Acre,A
+Alagoas,A
+Amapá,A
+Amazonas,A
+Bahia,B
+Ceará,C
+Distrito Federal,DF
+Espírito Santo,ES
+Goiás,G
+Maranhão,M
+Mato Grosso,MG
+Mato Grosso do Sul,MGDS
+Minas Gerais,MG
+Paraná,P
+Paraíba,P
+Pará,P
+Pernambuco,P
+Piauí,P
+Rio Grande do Norte,RGDN
+Rio Grande do Sul,RGDS
+Rio de Janeiro,RDJ
+Rondônia,R
+Roraima,R
+Santa Catarina,SC
+Sergipe,S
+São Paulo,SP
+Tocantins,T

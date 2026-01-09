@@ -1,0 +1,339 @@
+city,population,state_id,state_name
+Rio Branco,364756,AC,Acre
+Maceió,957916,AL,Alagoas
+Arapiraca,234696,AL,Alagoas
+Macapá,442933,AP,Amapá
+Santana,107373,AP,Amapá
+Manaus,2063547,AM,Amazonas
+Itacoatiara,103598,AM,Amazonas
+Manacapuru,101883,AM,Amazonas
+Parintins,96372,AM,Amazonas
+Salvador,2418005,BA,Bahia
+Feira de Santana,616279,BA,Bahia
+Vitória da Conquista,370868,BA,Bahia
+Camaçari,299579,BA,Bahia
+Juazeiro,235816,BA,Bahia
+Lauro de Freitas,203334,BA,Bahia
+Itabuna,186708,BA,Bahia
+Ilhéus,178703,BA,Bahia
+Porto Seguro,167955,BA,Bahia
+Barreiras,159743,BA,Bahia
+Jequié,158812,BA,Bahia
+Alagoinhas,151065,BA,Bahia
+Teixeira de Freitas,145223,BA,Bahia
+Eunápolis,113709,BA,Bahia
+Simões Filho,114441,BA,Bahia
+Paulo Afonso,112870,BA,Bahia
+Luís Eduardo Magalhães,107909,BA,Bahia
+Santo Antônio de Jesus,103055,BA,Bahia
+Fortaleza,2428678,CE,Ceará
+Caucaia,355679,CE,Ceará
+Juazeiro do Norte,286120,CE,Ceará
+Maracanaú,234392,CE,Ceará
+Sobral,203023,CE,Ceará
+Crato,131050,CE,Ceará
+Itapipoca,131123,CE,Ceará
+Maranguape,105093,CE,Ceará
+Iguatu,98064,CE,Ceará
+Brasília,2817068,DF,Distrito Federal
+Serra,520649,ES,Espírito Santo
+Vila Velha,467722,ES,Espírito Santo
+Cariacica,353510,ES,Espírito Santo
+Vitória,322869,ES,Espírito Santo
+Cachoeiro de Itapemirim,185784,ES,Espírito Santo
+Linhares,166786,ES,Espírito Santo
+Guarapari,124656,ES,Espírito Santo
+São Mateus,123750,ES,Espírito Santo
+Colatina,119992,ES,Espírito Santo
+Aracruz,94765,ES,Espírito Santo
+Goiânia,1437237,GO,Goiás
+Aparecida de Goiânia,527550,GO,Goiás
+Anápolis,398817,GO,Goiás
+Águas Lindas de Goiás,225671,GO,Goiás
+Rio Verde,225696,GO,Goiás
+Luziânia,208725,GO,Goiás
+Valparaíso de Goiás,198861,GO,Goiás
+Senador Canedo,155635,GO,Goiás
+Trindade,142431,GO,Goiás
+Catalão,114427,GO,Goiás
+Formosa,115669,GO,Goiás
+Itumbiara,107970,GO,Goiás
+Planaltina,105031,GO,Goiás
+Jataí,105729,GO,Goiás
+Novo Gama,103804,GO,Goiás
+Caldas Novas,98622,GO,Goiás
+Cidade Ocidental,91767,GO,Goiás
+São Luís,1037775,MA,Maranhão
+Imperatriz,273110,MA,Maranhão
+São José de Ribamar,244579,MA,Maranhão
+Timon,174465,MA,Maranhão
+Caxias,156970,MA,Maranhão
+Paço do Lumiar,145643,MA,Maranhão
+Codó,114269,MA,Maranhão
+Açailândia,106550,MA,Maranhão
+Bacabal,103711,MA,Maranhão
+Balsas,101616,MA,Maranhão
+Cuiabá,650912,MT,Mato Grosso
+Várzea Grande,299472,MT,Mato Grosso
+Rondonópolis,244897,MT,Mato Grosso
+Sinop,196067,MT,Mato Grosso
+Sorriso,110635,MT,Mato Grosso
+Tangará da Serra,106434,MT,Mato Grosso
+Campo Grande,897938,MS,Mato Grosso do Sul
+Dourados,243368,MS,Mato Grosso do Sul
+Três Lagoas,132152,MS,Mato Grosso do Sul
+Belo Horizonte,2315560,MG,Minas Gerais
+Uberlândia,713232,MG,Minas Gerais
+Contagem,621865,MG,Minas Gerais
+Juiz de Fora,540756,MG,Minas Gerais
+Montes Claros,414240,MG,Minas Gerais
+Betim,411859,MG,Minas Gerais
+Uberaba,337846,MG,Minas Gerais
+Ribeirão das Neves,329794,MG,Minas Gerais
+Governador Valadares,257172,MG,Minas Gerais
+Divinópolis,231091,MG,Minas Gerais
+Sete Lagoas,227360,MG,Minas Gerais
+Ipatinga,227731,MG,Minas Gerais
+Santa Luzia,218805,MG,Minas Gerais
+Ibirité,170387,MG,Minas Gerais
+Poços de Caldas,163742,MG,Minas Gerais
+Patos de Minas,159235,MG,Minas Gerais
+Pouso Alegre,152212,MG,Minas Gerais
+Varginha,136467,MG,Minas Gerais
+Teófilo Otoni,137418,MG,Minas Gerais
+Conselheiro Lafaiete,131621,MG,Minas Gerais
+Vespasiano,129246,MG,Minas Gerais
+Sabará,129372,MG,Minas Gerais
+Barbacena,125317,MG,Minas Gerais
+Araguari,117808,MG,Minas Gerais
+Nova Lima,111697,MG,Minas Gerais
+Araxá,111691,MG,Minas Gerais
+Itabira,113343,MG,Minas Gerais
+Passos,111939,MG,Minas Gerais
+Nova Serrana,105552,MG,Minas Gerais
+Lavras,104761,MG,Minas Gerais
+Coronel Fabriciano,104736,MG,Minas Gerais
+Muriaé,104108,MG,Minas Gerais
+Ubá,103365,MG,Minas Gerais
+Ituiutaba,102217,MG,Minas Gerais
+Itaúna,97669,MG,Minas Gerais
+Pará de Minas,97139,MG,Minas Gerais
+Curitiba,1773733,PR,Paraná
+Londrina,555937,PR,Paraná
+Maringá,409657,PR,Paraná
+Ponta Grossa,358367,PR,Paraná
+Cascavel,348051,PR,Paraná
+São José dos Pinhais,329222,PR,Paraná
+Foz do Iguaçu,285415,PR,Paraná
+Colombo,232056,PR,Paraná
+Guarapuava,182093,PR,Paraná
+Fazenda Rio Grande,148873,PR,Paraná
+Araucária,151666,PR,Paraná
+Toledo,150470,PR,Paraná
+Paranaguá,145829,PR,Paraná
+Campo Largo,136327,PR,Paraná
+Apucarana,130134,PR,Paraná
+Pinhais,127019,PR,Paraná
+Sarandi,118455,PR,Paraná
+Piraquara,118730,PR,Paraná
+Almirante Tamandaré,119825,PR,Paraná
+Arapongas,119138,PR,Paraná
+Umuarama,117095,PR,Paraná
+Cambé,107208,PR,Paraná
+Campo Mourão,99432,PR,Paraná
+Francisco Beltrão,96666,PR,Paraná
+João Pessoa,833932,PB,Paraíba
+Campina Grande,419379,PB,Paraíba
+Santa Rita,149910,PB,Paraíba
+Patos,103165,PB,Paraíba
+Belém,1303389,PA,Pará
+Ananindeua,478778,PA,Pará
+Santarém,331937,PA,Pará
+Parauapebas,266424,PA,Pará
+Marabá,266536,PA,Pará
+Castanhal,192262,PA,Pará
+Abaetetuba,158188,PA,Pará
+Cametá,134184,PA,Pará
+Barcarena,126650,PA,Pará
+Altamira,126279,PA,Pará
+Itaituba,123312,PA,Pará
+Bragança,123082,PA,Pará
+Marituba,110515,PA,Pará
+Breves,106968,PA,Pará
+Paragominas,105538,PA,Pará
+Recife,1488920,PE,Pernambuco
+Jaboatão dos Guararapes,643759,PE,Pernambuco
+Petrolina,386786,PE,Pernambuco
+Caruaru,378052,PE,Pernambuco
+Paulista,342167,PE,Pernambuco
+Olinda,349976,PE,Pernambuco
+Cabo de Santo Agostinho,203216,PE,Pernambuco
+Camaragibe,147771,PE,Pernambuco
+Garanhuns,142506,PE,Pernambuco
+Vitória de Santo Antão,134110,PE,Pernambuco
+Igarassu,115196,PE,Pernambuco
+São Lourenço da Mata,111243,PE,Pernambuco
+Ipojuca,98932,PE,Pernambuco
+Santa Cruz do Capibaribe,98254,PE,Pernambuco
+Abreu e Lima,98462,PE,Pernambuco
+Teresina,866300,PI,Piauí
+Parnaíba,162159,PI,Piauí
+Natal,751300,RN,Rio Grande do Norte
+Mossoró,264577,RN,Rio Grande do Norte
+Parnamirim,252716,RN,Rio Grande do Norte
+São Gonçalo do Amarante,115838,RN,Rio Grande do Norte
+Porto Alegre,1332570,RS,Rio Grande do Sul
+Caxias do Sul,463338,RS,Rio Grande do Sul
+Canoas,347657,RS,Rio Grande do Sul
+Pelotas,325689,RS,Rio Grande do Sul
+Santa Maria,271633,RS,Rio Grande do Sul
+Gravataí,265070,RS,Rio Grande do Sul
+Novo Hamburgo,227732,RS,Rio Grande do Sul
+Viamão,224116,RS,Rio Grande do Sul
+São Leopoldo,217410,RS,Rio Grande do Sul
+Passo Fundo,206224,RS,Rio Grande do Sul
+Rio Grande,191900,RS,Rio Grande do Sul
+Alvorada,187315,RS,Rio Grande do Sul
+Cachoeirinha,136258,RS,Rio Grande do Sul
+Santa Cruz do Sul,133230,RS,Rio Grande do Sul
+Sapucaia do Sul,132107,RS,Rio Grande do Sul
+Bento Gonçalves,123151,RS,Rio Grande do Sul
+Bagé,117938,RS,Rio Grande do Sul
+Uruguaiana,117210,RS,Rio Grande do Sul
+Erechim,105705,RS,Rio Grande do Sul
+Rio de Janeiro,6211423,RJ,Rio de Janeiro
+São Gonçalo,896744,RJ,Rio de Janeiro
+Duque de Caxias,808152,RJ,Rio de Janeiro
+Nova Iguaçu,785882,RJ,Rio de Janeiro
+Campos dos Goytacazes,483551,RJ,Rio de Janeiro
+Belford Roxo,483087,RJ,Rio de Janeiro
+Niterói,481758,RJ,Rio de Janeiro
+São João de Meriti,440962,RJ,Rio de Janeiro
+Petrópolis,278881,RJ,Rio de Janeiro
+Volta Redonda,261584,RJ,Rio de Janeiro
+Macaé,246391,RJ,Rio de Janeiro
+Magé,228127,RJ,Rio de Janeiro
+Itaboraí,224267,RJ,Rio de Janeiro
+Cabo Frio,221987,RJ,Rio de Janeiro
+Maricá,197300,RJ,Rio de Janeiro
+Nova Friburgo,189937,RJ,Rio de Janeiro
+Barra Mansa,169899,RJ,Rio de Janeiro
+Angra dos Reis,167418,RJ,Rio de Janeiro
+Mesquita,167128,RJ,Rio de Janeiro
+Teresópolis,165123,RJ,Rio de Janeiro
+Rio das Ostras,156491,RJ,Rio de Janeiro
+Nilópolis,146774,RJ,Rio de Janeiro
+Queimados,140523,RJ,Rio de Janeiro
+Araruama,129669,RJ,Rio de Janeiro
+Resende,129612,RJ,Rio de Janeiro
+Itaguaí,116841,RJ,Rio de Janeiro
+São Pedro da Aldeia,104029,RJ,Rio de Janeiro
+Itaperuna,101041,RJ,Rio de Janeiro
+Japeri,96289,RJ,Rio de Janeiro
+Porto Velho,460413,RO,Rondônia
+Ji-Paraná,124333,RO,Rondônia
+Vilhena,95832,RO,Rondônia
+Ariquemes,96833,RO,Rondônia
+Boa Vista,413486,RR,Roraima
+Joinville,616323,SC,Santa Catarina
+Florianópolis,537213,SC,Santa Catarina
+Blumenau,361261,SC,Santa Catarina
+São José,270295,SC,Santa Catarina
+Itajaí,264054,SC,Santa Catarina
+Chapecó,254781,SC,Santa Catarina
+Palhoça,222598,SC,Santa Catarina
+Criciúma,214493,SC,Santa Catarina
+Jaraguá do Sul,182660,SC,Santa Catarina
+Lages,164981,SC,Santa Catarina
+Brusque,141385,SC,Santa Catarina
+Balneário Camboriú,139155,SC,Santa Catarina
+Camboriú,103074,SC,Santa Catarina
+Tubarão,110088,SC,Santa Catarina
+Aracaju,602757,SE,Sergipe
+Nossa Senhora do Socorro,192330,SE,Sergipe
+Itabaiana,103439,SE,Sergipe
+Lagarto,101579,SE,Sergipe
+São Cristóvão,95612,SE,Sergipe
+São Paulo,11451245,SP,São Paulo
+Guarulhos,1291784,SP,São Paulo
+Campinas,1138309,SP,São Paulo
+São Bernardo do Campo,810729,SP,São Paulo
+Santo André,748919,SP,São Paulo
+Sorocaba,723574,SP,São Paulo
+Osasco,743432,SP,São Paulo
+Ribeirão Preto,698259,SP,São Paulo
+São José dos Campos,697428,SP,São Paulo
+São José do Rio Preto,480439,SP,São Paulo
+Mogi das Cruzes,449955,SP,São Paulo
+Jundiaí,443116,SP,São Paulo
+Piracicaba,423323,SP,São Paulo
+Santos,418608,SP,São Paulo
+Mauá,418261,SP,São Paulo
+Diadema,393237,SP,São Paulo
+Carapicuíba,387121,SP,São Paulo
+Bauru,379146,SP,São Paulo
+Itaquaquecetuba,369275,SP,São Paulo
+Praia Grande,349935,SP,São Paulo
+Franca,352537,SP,São Paulo
+São Vicente,329844,SP,São Paulo
+Barueri,316473,SP,São Paulo
+Taubaté,310739,SP,São Paulo
+Suzano,307364,SP,São Paulo
+Limeira,291869,SP,São Paulo
+Guarujá,287634,SP,São Paulo
+Sumaré,279546,SP,São Paulo
+Cotia,273640,SP,São Paulo
+Taboão da Serra,273542,SP,São Paulo
+Indaiatuba,255739,SP,São Paulo
+São Carlos,254822,SP,São Paulo
+Embu das Artes,250720,SP,São Paulo
+Araraquara,242228,SP,São Paulo
+Jacareí,240275,SP,São Paulo
+Hortolândia,236641,SP,São Paulo
+Americana,237247,SP,São Paulo
+Marília,237629,SP,São Paulo
+Itapevi,232513,SP,São Paulo
+Presidente Prudente,225668,SP,São Paulo
+Rio Claro,201418,SP,São Paulo
+Araçatuba,200124,SP,São Paulo
+Santa Bárbara d'Oeste,183347,SP,São Paulo
+Ferraz de Vasconcelos,179205,SP,São Paulo
+Bragança Paulista,176811,SP,São Paulo
+Itu,168240,SP,São Paulo
+São Caetano do Sul,165655,SP,São Paulo
+Pindamonhangaba,165428,SP,São Paulo
+Francisco Morato,165139,SP,São Paulo
+Atibaia,158640,SP,São Paulo
+Itapetininga,157790,SP,São Paulo
+Santana de Parnaíba,154105,SP,São Paulo
+Itapecerica da Serra,158522,SP,São Paulo
+Mogi Guaçu,153661,SP,São Paulo
+Botucatu,145155,SP,São Paulo
+Franco da Rocha,144849,SP,São Paulo
+Caraguatatuba,134875,SP,São Paulo
+Salto,134319,SP,São Paulo
+Jaú,133497,SP,São Paulo
+Araras,130866,SP,São Paulo
+Votorantim,127923,SP,São Paulo
+Valinhos,126325,SP,São Paulo
+Sertãozinho,126887,SP,São Paulo
+Tatuí,123942,SP,São Paulo
+Itatiba,122424,SP,São Paulo
+Barretos,122485,SP,São Paulo
+Birigui,118979,SP,São Paulo
+Guaratinguetá,118044,SP,São Paulo
+Jandira,118045,SP,São Paulo
+Várzea Paulista,115771,SP,São Paulo
+Catanduva,115785,SP,São Paulo
+Ribeirão Pires,115559,SP,São Paulo
+Itanhaém,112476,SP,São Paulo
+Paulínia,110537,SP,São Paulo
+Cubatão,112471,SP,São Paulo
+Ourinhos,103970,SP,São Paulo
+Poá,103765,SP,São Paulo
+Assis,101409,SP,São Paulo
+Leme,98161,SP,São Paulo
+Votuporanga,96634,SP,São Paulo
+Caçapava,96202,SP,São Paulo
+Palmas,302692,TO,Tocantins
+Araguaína,171301,TO,Tocantins
