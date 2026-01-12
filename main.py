@@ -1,6 +1,7 @@
 from src.extract.scrapers.scraper import TableScraper
 from src.transform.population_transformer import PopulationStatesTransformer, PopulationCitiesTransformer
 from src.transform.state_name_lookup_transformer import StateNameTransformer
+from src.transform.order_transformer import OrderTransformer
 
 # Define your sources
 sources = [
@@ -33,9 +34,11 @@ def run_extraction():
         scraper.scrape_table(index=source["index"])
 
 def run_transformation():
-    StateNameTransformer().run_all()
-    PopulationCitiesTransformer(file_name='population_cities_2022.csv').run_all()
-    PopulationStatesTransformer(file_name='population_states_2022.csv').run_all()
+    # StateNameTransformer(file_name='state_name_lookup.csv').run_all()
+    # PopulationCitiesTransformer(file_name='population_cities_2022.csv').run_all()
+    # PopulationStatesTransformer(file_name='population_states_2022.csv').run_all()
+    OrderTransformer(file_name='olist_orders_dataset.csv').run_all()
+    
 
 if __name__ == "__main__":
     run_extraction()

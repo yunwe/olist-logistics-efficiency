@@ -6,4 +6,8 @@ from .state_name_lookup_transformer import StateNameTransformer
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
 
-__all__ = ["PopulationCitiesTransformer", "PopulationStatesTransformer", "StateNameTransformer"]
+__all__ = [
+    "PopulationCitiesTransformer", 
+    "PopulationStatesTransformer", 
+    "StateNameTransformer"
+]

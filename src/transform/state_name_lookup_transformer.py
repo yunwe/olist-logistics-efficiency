@@ -4,14 +4,13 @@ import os
 
 
 class StateNameTransformer():
-    def __init__(self):
-        self.file_name = 'state_name_lookup.csv'
+    def __init__(self, file_name):
         self.logger = logging.getLogger(__name__)
         self.raw_dir = "data/raw"
         self.output_dir = "data/processed"
-        self.read_path = os.path.join(self.raw_dir, self.file_name)
-        self.save_path = os.path.join(self.output_dir, self.file_name)
-        
+        self.read_path = os.path.join(self.raw_dir, file_name)
+        self.save_path = os.path.join(self.output_dir, file_name)
+       
 
     def run_all(self, force_run=False):
         if os.path.exists(self.save_path) and not force_run:
