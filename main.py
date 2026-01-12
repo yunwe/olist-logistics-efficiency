@@ -1,4 +1,6 @@
 from src.extract.scrapers.scraper import TableScraper
+from src.transform.population_transformer import PopulationStatesTransformer, PopulationCitiesTransformer
+from src.transform.state_name_lookup_transformer import StateNameTransformer
 
 # Define your sources
 sources = [
@@ -29,7 +31,12 @@ def run_extraction():
         
         # This will either load from disk or scrape if it's the first time
         scraper.scrape_table(index=source["index"])
-        
+
+def run_transformation():
+    StateNameTransformer().run_all()
+    PopulationCitiesTransformer(file_name='population_cities_2022.csv').run_all()
+    PopulationStatesTransformer(file_name='population_states_2022.csv').run_all()
 
 if __name__ == "__main__":
     run_extraction()
+    run_transformation()

@@ -18,7 +18,7 @@ class BaseScraper:
         }
         self.logger = logging.getLogger(__name__)
 
-    def fetch_page(self, endpoint):
+    def fetch_page(self):
         """Handles the HTTP request and basic error handling."""
         try:
             response = requests.get(self.url, headers=self.headers, timeout=10)
@@ -50,7 +50,7 @@ class TableScraper(BaseScraper):
             df = self._to_df(table)
             self._save_to_disk(df)
         else:
-            self.logger.error(f"Error: Table index out of bound at {url}")
+            self.logger.error(f"Error: Table index out of bound at {self.url}")
 
     def _to_df(self, table) -> pd.DataFrame:
         data = []
