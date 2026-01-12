@@ -25,7 +25,7 @@ class BaseScraper:
             response.raise_for_status() # Raises error for 4xx or 5xx codes
             return response.text
         except requests.exceptions.RequestException as e:
-            self.logger.error(f"Failed to fetch {url}: {e}")
+            self.logger.error(f"Failed to fetch {self.url}: {e}")
             return None
     
     def _save_to_disk(self, df: pd.DataFrame) -> None:
@@ -34,8 +34,11 @@ class BaseScraper:
 
 # 2. Implementation Class (The Specific Logic)
 class TableScraper(BaseScraper):
-    def scrape_table(self, index: int):
-        """Specific logic to extract table from HTML."""
+    def scrape_table(self, index: int, force_scrape=False):
+        if os.path.exists(self.save_path) and not force_scrape:
+            return 
+        
+        """Specific logic to extract table from HTML and save to Disk."""
         html = self.fetch_page(self.url)
         if not html:
             return []
@@ -51,12 +54,17 @@ class TableScraper(BaseScraper):
 
     def _to_df(self, table) -> pd.DataFrame:
         data = []
-             
+        headers = []
+        for th in table.find_all('th'):
+            headers.append(th.text.strip())
+            
         for tr in table.find_all('tr'):
             cells = tr.find_all('td')
+            if len(cells) == 0:
+                continue
             row = []
             for cell in cells:
                 row.append(cell.text.strip())
             data.append(row)
-            
-        return pd.DataFrame(data)
+        
+        return pd.DataFrame(data, columns=headers if headers else None)

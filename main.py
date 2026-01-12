@@ -6,6 +6,16 @@ sources = [
         "url": "https://en.wikipedia.org/wiki/List_of_municipalities_in_Brazil_by_population",
         "index": 1,
         "file": "population_cities_2022.csv"
+    },
+    {
+        "url": "https://en.wikipedia.org/wiki/2022_Brazilian_census",
+        "index": 2,
+        "file": "population_states_2022.csv"
+    },
+    {
+        "url": "https://brazil-help.com/brazilian_states.htm",
+        "index": 27,
+        "file": "state_name_lookup.csv"
     }
 ]
 
