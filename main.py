@@ -35,11 +35,11 @@ def run_extraction():
         scraper.scrape_table(index=source["index"])
 
 def run_transformation():
-    StateNameTransformer(file_name='state_name_lookup.csv').run_all()
-    PopulationCitiesTransformer(file_name='population_cities_2022.csv').run_all()
-    PopulationStatesTransformer(file_name='population_states_2022.csv').run_all()
-    OrderTransformer(file_name='olist_orders_dataset.csv').run_all()
-    GeolocationTransformer(file_name='olist_geolocation_dataset.csv').run_all()
+    # StateNameTransformer(file_name='state_name_lookup.csv').run_all()
+    # PopulationCitiesTransformer(file_name='population_cities_2022.csv').run_all()
+    # PopulationStatesTransformer(file_name='population_states_2022.csv').run_all()
+    # OrderTransformer(file_name='olist_orders_dataset.csv').run_all()
+    GeolocationTransformer(file_name='olist_geolocation_dataset.csv').run_all(force_run=True)
 
     
 
