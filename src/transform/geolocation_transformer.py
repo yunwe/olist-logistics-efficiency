@@ -6,7 +6,7 @@ class GeolocationTransformer():
     def __init__(self, file_name):
         self.logger = logging.getLogger(__name__)
         self.raw_dir = "data/raw"
-        self.output_dir = "data/output"
+        self.output_dir = "data/processed"
         self.read_path = os.path.join(self.raw_dir, file_name)
         self.save_path = os.path.join(self.output_dir, file_name)
     

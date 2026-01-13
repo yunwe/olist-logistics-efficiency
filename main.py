@@ -3,6 +3,9 @@ from src.transform.population_transformer import PopulationStatesTransformer, Po
 from src.transform.state_name_lookup_transformer import StateNameTransformer
 from src.transform.order_transformer import OrderTransformer
 from src.transform.geolocation_transformer import GeolocationTransformer
+from src.transform.customer_transformer import CustomerTransformer
+from src.transform.seller_transformer import SellerTransformer
+from src.transform.seller_shipping_time_transformer import SellerShippingTimeTransformer
 
 # Define your sources
 sources = [
@@ -39,7 +42,10 @@ def run_transformation():
     # PopulationCitiesTransformer(file_name='population_cities_2022.csv').run_all()
     # PopulationStatesTransformer(file_name='population_states_2022.csv').run_all()
     # OrderTransformer(file_name='olist_orders_dataset.csv').run_all()
-    GeolocationTransformer(file_name='olist_geolocation_dataset.csv').run_all(force_run=True)
+    # GeolocationTransformer(file_name='olist_geolocation_dataset.csv').run_all()
+    # CustomerTransformer(file_name='olist_customers_dataset.csv').run_all()
+    # SellerTransformer(file_name='olist_sellers_dataset.csv').run_all()
+    SellerShippingTimeTransformer(file_name='sellers_shipping_time_dataset.csv').run_all(force_run=True)
 
     
 

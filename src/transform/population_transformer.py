@@ -8,11 +8,14 @@ class PopulationTransformer:
     def __init__(self, file_name):
         self.logger = logging.getLogger(__name__)
         self.raw_dir = "data/raw"
-        self.output_dir = "data/output"
+        self.output_dir = "data/processed"
         self.save_path = os.path.join(self.output_dir, file_name)
         self.read_path = os.path.join(self.raw_dir, file_name)
 
-    def run_all(self):
+    def run_all(self, force_run=False):
+        if os.path.exists(self.save_path) and not force_run:
+            return 
+        
         """
         The main orchestrator for transformations. 
         It executes the steps in order.
