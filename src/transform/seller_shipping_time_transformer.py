@@ -2,6 +2,7 @@ import pandas as pd
 import logging
 import os
 from src.utils.read_datasets import read_order_items, read_sellers, read_orders
+from src.utils.helper import flag_outliers_iqr
 
 class SellerShippingTimeTransformer():
     def __init__(self, file_name):
@@ -26,6 +27,8 @@ class SellerShippingTimeTransformer():
 
         df = self._merge_sellers(df)
         df = self._merge_orders(df)
+        df = self._remove_errors(df)
+        df = self._flag_outliers(df)
         self._save_to_disk(df=df)
     
 
@@ -38,8 +41,32 @@ class SellerShippingTimeTransformer():
     
     def _merge_orders(self, df: pd.DataFrame) -> pd.DataFrame:
         orders = read_orders()
-        df = pd.merge(df, orders[['order_id', 'order_purchase_timestamp', 'seller_to_logistic_time']] , on='order_id', how="left")
+        
+        # Calcualte total time need from purchase to delivered to carrier
+        orders['delivered_carrier_time'] = orders['order_delivered_carrier_date'] - orders['order_purchase_timestamp']
+        
+        # Remove the orders that are not delivered yet
+        orders = orders[orders['order_delivered_carrier_date'].notnull()]
+
+        df = pd.merge(df, orders[['order_id', 'order_purchase_timestamp', 'delivered_carrier_time']] , on='order_id', how="inner")
         return df
+    
+    def _remove_errors(self, df: pd.DataFrame) -> pd.DataFrame:
+        condition_to_keep = df['delivered_carrier_time'].dt.total_seconds() > 0
+        return df[condition_to_keep]
+
+    def _flag_outliers(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        The delivery time varies state by state.
+        So, the outlier is detected per state instead of the whold dataset.
+        """
+        states = df['state'].value_counts().index
+        flaged = pd.DataFrame()
+        for state in states:
+            new_df = flag_outliers_iqr(df[df['state'] == state], 'delivered_carrier_time')
+            flaged = pd.concat([flaged, new_df], ignore_index=True)
+            
+        return flaged
     
     def _save_to_disk(self, df: pd.DataFrame) -> None:
         df.to_csv(self.save_path, index=False)
