@@ -28,6 +28,7 @@ class SellerShippingTimeTransformer():
         df = self._merge_sellers(df)
         df = self._merge_orders(df)
         df = self._remove_errors(df)
+        df = self._remove_duplicates(df)
         df = self._flag_outliers(df)
         self._save_to_disk(df=df)
     
@@ -55,6 +56,10 @@ class SellerShippingTimeTransformer():
         condition_to_keep = df['delivered_carrier_time'].dt.total_seconds() > 0
         return df[condition_to_keep]
 
+    def _remove_duplicates(self, df: pd.DataFrame) -> pd.DataFrame:
+        df = df.drop_duplicates(subset=['order_id', 'seller_id'])
+        return df
+
     def _flag_outliers(self, df: pd.DataFrame) -> pd.DataFrame:
         """
         The delivery time varies state by state.
@@ -65,7 +70,7 @@ class SellerShippingTimeTransformer():
         for state in states:
             new_df = flag_outliers_iqr(df[df['state'] == state], 'delivered_carrier_time')
             flaged = pd.concat([flaged, new_df], ignore_index=True)
-            
+
         return flaged
     
     def _save_to_disk(self, df: pd.DataFrame) -> None:
