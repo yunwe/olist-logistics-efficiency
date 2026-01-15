@@ -21,11 +21,10 @@ def read_orders() -> pd.DataFrame:
                          'order_estimated_delivery_date'])
     return df
 
- 
-
-
 def read_order_items() -> pd.DataFrame:
     return pd.read_csv("data/raw/olist_order_items_dataset.csv", parse_dates=['shipping_limit_date'])
 
+def read_products() -> pd.DataFrame:
+    return pd.read_csv("data/raw/olist_products_dataset.csv")
 
     
