@@ -27,6 +27,16 @@ def read_seller_delivery() -> pd.DataFrame:
     df['delivered_carrier_time'] = pd.to_timedelta(df['delivered_carrier_time'])    
     return df
 
+def read_product_delivery() -> pd.DataFrame:
+    df = pd.read_csv("../data/output/product_shipping_time_dataset.csv" , 
+                       dtype={'zip_code': str}, 
+                       parse_dates=['order_purchase_timestamp']
+                    )
+    df['delivered_carrier_time'] = pd.to_timedelta(df['delivered_carrier_time'])   
+    df['carrier_to_customer_time'] = pd.to_timedelta(df['carrier_to_customer_time'])   
+    df['total_delivery_time'] = pd.to_timedelta(df['total_delivery_time'])   
+    return df
+
 def _read_geojson(file_name) -> gpd.GeoDataFrame:
     df = gpd.read_file(f"../data/others/geojson/data/{file_name}.json")
     return df
