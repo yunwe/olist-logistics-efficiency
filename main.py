@@ -6,6 +6,7 @@ from src.transform.customer_transformer import CustomerTransformer
 from src.transform.seller_transformer import SellerTransformer
 from src.transform.seller_shipping_time_transformer import SellerShippingTimeTransformer
 from src.transform.product_shipping_time_transformer import ProductShippingTimeTransformer
+from src.transform.customer_seller_transformer import CustomerSellerTransformer
 
 # Define your sources
 sources = [
@@ -45,11 +46,9 @@ def run_transformation():
     CustomerTransformer(file_name='olist_customers_dataset.csv').run_all()
     SellerTransformer(file_name='olist_sellers_dataset.csv').run_all()
     SellerShippingTimeTransformer(file_name='sellers_shipping_time_dataset.csv').run_all()
-    ProductShippingTimeTransformer(file_name='product_shipping_time_dataset.csv').run_all(force_run=True)
-
-
+    ProductShippingTimeTransformer(file_name='product_shipping_time_dataset.csv').run_all()
+    CustomerSellerTransformer(file_name='customer_seller.csv').run_all(force_run=True)
     
-
 if __name__ == "__main__":
     run_extraction()
     run_transformation()

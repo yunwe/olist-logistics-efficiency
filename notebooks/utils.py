@@ -8,15 +8,6 @@ def read_customers() -> pd.DataFrame:
 def read_sellers() -> pd.DataFrame:
     return pd.read_csv("../data/output/olist_sellers_dataset.csv", dtype={'zip_code': str})
 
-def read_orders() -> pd.DataFrame:
-    df = pd.read_csv("../data/raw/olist_orders_dataset.csv", parse_dates=[
-                         'order_purchase_timestamp', 
-                         'order_approved_at',
-                         'order_delivered_carrier_date',
-                         'order_delivered_customer_date',
-                         'order_estimated_delivery_date'])
-    return df
-
 def read_seller_delivery() -> pd.DataFrame:
     df = pd.read_csv("../data/output/sellers_shipping_time_dataset.csv" , 
                        dtype={'zip_code': str}, 
@@ -36,6 +27,20 @@ def read_product_delivery() -> pd.DataFrame:
     df['carrier_to_customer_time'] = pd.to_timedelta(df['carrier_to_customer_time'])   
     df['total_delivery_time'] = pd.to_timedelta(df['total_delivery_time'])   
     return df
+
+def read_customer_seller() -> pd.DataFrame:
+    df = pd.read_csv("../data/output/customer_seller.csv" , 
+                     parse_dates=[
+                         'order_purchase_timestamp', 
+                         'order_approved_at',
+                         'order_delivered_carrier_date',
+                         'order_delivered_customer_date',
+                         'order_estimated_delivery_date']
+                    )
+    return df
+
+def read_state_name_lookup() -> pd.DataFrame:
+    return pd.read_csv("../data/raw/state_name_lookup.csv")
 
 def _read_geojson(file_name) -> gpd.GeoDataFrame:
     df = gpd.read_file(f"../data/others/geojson/data/{file_name}.json")
@@ -91,8 +96,8 @@ def plot_changes(gdf: gpd.GeoDataFrame, column: str, title: str):
     plt.show()
 
 # Show Which area is performing better
-def plot_performance(gdf: gpd.GeoDataFrame, column: str, title: str):
-    ax = gdf.plot(column = column, cmap = 'Greens', edgecolor= 'grey', legend = True, figsize=(14, 8))
+def plot_performance(gdf: gpd.GeoDataFrame, column: str, title: str, cmap: str = 'Greens'):
+    ax = gdf.plot(column = column, cmap = cmap, edgecolor= 'grey', legend = True, figsize=(14, 8))
 
     texts = []
     for x, y, label in zip(gdf.center.x, gdf.center.y, gdf['UF']):

@@ -21,6 +21,20 @@ def read_orders() -> pd.DataFrame:
                          'order_estimated_delivery_date'])
     return df
 
+'''
+The resulted dataframe that's already merged
+sellers, orders, order_items
+'''
+def read_orders_sellers() -> pd.DataFrame:
+    df = pd.read_csv("data/output/sellers_shipping_time_dataset.csv",
+                     dtype={'zip_code': str}, 
+                     parse_dates=[
+                         'shipping_limit_date',
+                         'order_purchase_timestamp'
+                         ]
+                    )
+    return df
+
 def read_order_items() -> pd.DataFrame:
     return pd.read_csv("data/raw/olist_order_items_dataset.csv", parse_dates=['shipping_limit_date'])
 

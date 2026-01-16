@@ -32,8 +32,9 @@ class ProductShippingTimeTransformer():
 
     def _merge_products(self, df: pd.DataFrame) -> pd.DataFrame:
         p = read_products()
-        cols = ['product_id', 'product_category_name']
-        merge =  pd.merge(df, p[cols], on='product_id', how="left")
+        drop_cols = ['product_name_lenght', 'product_description_lenght', 'product_photos_qty']
+        p = p.drop(columns= drop_cols, axis=0)
+        merge =  pd.merge(df, p, on='product_id', how="left")
         return merge
     
     def _merge_orders(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -71,10 +72,9 @@ class ProductShippingTimeTransformer():
         df = df.groupby(['order_id', 'product_id']).agg({
             'order_item_id': 'sum',
             'seller_id': 'first',
-            'price': 'first',
             'freight_value': 'first'
         }).reset_index()
-        df.columns = ['order_id', 'product_id', 'quantity', 'seller_id', 'price', 'freight_value']
+        df.columns = ['order_id', 'product_id', 'quantity', 'seller_id', 'freight_value']
         return df
 
 
