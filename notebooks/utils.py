@@ -8,6 +8,15 @@ def read_customers() -> pd.DataFrame:
 def read_sellers() -> pd.DataFrame:
     return pd.read_csv("../data/output/olist_sellers_dataset.csv", dtype={'zip_code': str})
 
+def read_orders() -> pd.DataFrame:
+    return pd.read_csv("../data/raw/olist_orders_dataset.csv", parse_dates=[
+                         'order_purchase_timestamp', 
+                         'order_approved_at',
+                         'order_delivered_carrier_date',
+                         'order_delivered_customer_date',
+                         'order_estimated_delivery_date']
+                      )
+
 def read_seller_delivery() -> pd.DataFrame:
     df = pd.read_csv("../data/output/sellers_shipping_time_dataset.csv" , 
                        dtype={'zip_code': str}, 
