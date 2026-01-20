@@ -37,7 +37,8 @@ The analysis is based on the Olist Brazilian E-Commerce Dataset, which contains 
 
 **Spatial Velocity & Mapping**: GeoPandas mapping of SP and RJ and calculating the "Velocity Paradox" across regions.
 
-**Product & Attribute Testing**: Testing the impact of weight and dimensions on delivery time.
+**[Product & Attribute Testing](notebooks/product_attribute_testing.ipynb):** Testing the impact of product attributes(weight, lenght, width, height), and distance(seller to customer) on delivery time.
+
 ## :mag: Key Findings
 
 1. **The Sunday "FIFO" Failure**\
