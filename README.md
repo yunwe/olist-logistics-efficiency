@@ -40,29 +40,26 @@ The analysis is based on the Olist Brazilian E-Commerce Dataset, which contains 
 **Product & Attribute Testing**: Testing the impact of weight and dimensions on delivery time.
 ## :mag: Key Findings
 
-1. **The Sunday "FIFO" Failure**
-
+1. **The Sunday "FIFO" Failure**\
 Orders reaching carriers on Sunday suffer a **double mean delivery time (12 days)**. Because the system pauses on weekends, Sunday orders are likely buried by fresh Monday volume. This **First-In, Last-Out (FILO)** behavior turns a 48-hour weekend break into a massive 12-day customer penalty.
 
-2. **The "Late-Shift" Inefficiency**
+3. **The "Late-Shift" Inefficiency**\
 Data reveals a rigid, late-leaning delivery window from **12:00 PM to 12:00 AM**.
+   * **Sorting Lag**: Starting deliveries at midday suggests that local hubs spend the most productive morning hours on internal sorting rather than transit.
 
-* **Sorting Lag**: Starting deliveries at midday suggests that local hubs spend the most productive morning hours on internal sorting rather than transit.
+   * **Customer Friction**: Ending the window at midnight likely conflicts with residential sleep norms, suggesting the "last-mile" is struggling to clear daily volume within standard hours.
 
-* **Customer Friction**: Ending the window at midnight likely conflicts with residential sleep norms, suggesting the "last-mile" is struggling to clear daily volume within standard hours.
-
-3. **The Velocity Paradox: Long-Haul vs. Urban Friction**
+3. **The Velocity Paradox: Long-Haul vs. Urban Friction**\
 Regional analysis proves that "Total Days" is a misleading metric:
+   * **High-Velocity North**: Despite long durations, the North is highly efficient over distance.
+   * **Low-Velocity South-East**: Areas closest to hubs have the lowest velocity. This signals intense urban friction (traffic and high-density drop-offs). The current midday start likely forces drivers into peak afternoon traffic, further degrading speed.
 
-* **High-Velocity North**: Despite long durations, the North is highly efficient over distance.
-
-* **Low-Velocity South-East**: Areas closest to hubs have the lowest velocity. This signals intense urban friction (traffic and high-density drop-offs). The current midday start likely forces drivers into peak afternoon traffic, further degrading speed.
-
-4. **Routing-Driven "Logistics Sinks"**
+4. **Routing-Driven "Logistics Sinks"**\
 Low-volume and island municipalities (specifically in SP and RJ) face severe delays. These areas lack the volume for frequent dispatches, forcing orders to wait at hubs for "batch routing" regardless of when the customer ordered.
 
-5. **Product Attribute Neutrality**
+5. **Product Attribute Neutrality**\
 Analysis showed **no strong correlation** between product weight, dimensions, and delivery speed. Bottlenecks are entirely **Schedule and Process-driven**, not cargo-dependent.
+
 ## :rocket: Strategic Recommendations
 
 1. **Shift Dispatch to "Early-Bird" Hours**: Move the local hub sorting process to night shifts to allow drivers to depart by 8:00 AM. This would bypass peak afternoon traffic and ensure deliveries are completed by a customer-friendly 8:00 PM cutoff.
