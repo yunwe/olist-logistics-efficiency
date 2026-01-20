@@ -18,6 +18,17 @@ The analysis is based on the Olist Brazilian E-Commerce Dataset, which contains 
 **Data Volume:** 100k+ orders across 73 product categories.
 
 **Key Features utilized:** Order timestamps, customer/seller location, freight value, and product dimensions.
+
+
+## :globe_with_meridians: Supplemental Data
+
+[Geodata](https://github.com/luizpedone/municipal-brazilian-geodata): To enhance the visualization with folium and choropleth map, I added geojson files. 
+
+
+[Brazil Help](https://brazil-help.com/brazilian_states.htm): I implemented web scraping to encode states into 5 regional levels, and adding acronyms columns which help merging with geojson files.
+
+
+
 ## :hammer_and_wrench: Tech Stack
 
 **Language:** Python 3.10+
@@ -29,6 +40,10 @@ The analysis is based on the Olist Brazilian E-Commerce Dataset, which contains 
 **Statistical Testing:** scipy.stats (Chi-Squared, Correlation analysis)
 
 **Visualization:** matplotlib, seaborn, folium
+
+**Web Scraping:** BeautifulSoup, requests
+
+
 ## :file_folder: Analysis Report
 
 **[Data Hygiene](notebooks/data_hygiene.ipynb)**: Auditing for batch updates and identifying reporting lag patterns.
