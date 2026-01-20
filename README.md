@@ -60,7 +60,7 @@ Regional analysis proves that "Total Days" is a misleading metric:
    * **Low-Velocity South-East**: Areas closest to hubs have the lowest velocity. This signals intense urban friction (traffic and high-density drop-offs). The current midday start likely forces drivers into peak afternoon traffic, further degrading speed.
 
 4. **Routing-Driven "Logistics Sinks"**\
-Low-volume and island municipalities (specifically in SP and RJ) face severe delays. These areas lack the volume for frequent dispatches, forcing orders to wait at hubs for "batch routing" regardless of when the customer ordered.
+Low-volume and island municipalities (specifically in RJ) face severe delays. These areas lack the volume for frequent dispatches, forcing orders to wait at hubs for "batch routing" regardless of when the customer ordered.
 
 5. **Product Attribute Neutrality**\
 Analysis showed **no strong correlation** between product weight, dimensions, and delivery speed. Bottlenecks are entirely **Schedule and Process-driven**, not cargo-dependent.
