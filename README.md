@@ -18,6 +18,17 @@ The analysis is based on the Olist Brazilian E-Commerce Dataset, which contains 
 **Data Volume:** 100k+ orders across 73 product categories.
 
 **Key Features utilized:** Order timestamps, customer/seller location, freight value, and product dimensions.
+
+
+## :globe_with_meridians: Supplemental Data
+
+[Geodata](https://github.com/luizpedone/municipal-brazilian-geodata): To enhance the visualization with folium and choropleth map, I added geojson files. 
+
+
+[Brazil Help](https://brazil-help.com/brazilian_states.htm): I implemented web scraping to encode states into 5 regional levels, and adding acronyms columns which help merging with geojson files.
+
+
+
 ## :hammer_and_wrench: Tech Stack
 
 **Language:** Python 3.10+
@@ -29,22 +40,30 @@ The analysis is based on the Olist Brazilian E-Commerce Dataset, which contains 
 **Statistical Testing:** scipy.stats (Chi-Squared, Correlation analysis)
 
 **Visualization:** matplotlib, seaborn, folium
+
+**Web Scraping:** BeautifulSoup, requests
+
+
 ## :file_folder: Analysis Report
 
-**EDA & Data Hygiene**: Auditing for batch updates and identifying reporting lag patterns.
+**[Data Hygiene](notebooks/data_hygiene.ipynb)**: Auditing for batch updates and identifying reporting lag patterns.
 
-**Temporal Analysis**: Investigating the Sunday 12-day penalty and weekday delivery windows.
+**[Temporal Analysis](notebooks/temporal_analysis.ipynb):** An evaluation of systemic operations, identifying a rigid midday-to-midnight delivery schedule. Featuring a comparative gap analysis of order registration vs final delivery volume.
 
-**Spatial Velocity & Mapping**: GeoPandas mapping of SP and RJ and calculating the "Velocity Paradox" across regions.
+**[Regional Performance & Velocity](notebooks/regional_performance.ipynb):** The "Velocity Paradox" at the state and regional levels. A comparison of raw delivery times vs. normalized speed ($km/hr$) across the 5 main Brazilian regions.
 
-**[Product & Attribute Testing](notebooks/product_attribute_testing.ipynb):** Testing the impact of product attributes(weight, lenght, width, height), and distance(seller to customer) on delivery time.
+**[Deep Dive: SP & RJ Analysis](notebooks/sp_rj.ipynb):** Municipality-level friction mapping for São Paulo and Rio de Janeiro. Identification of "Logistics Sinks" in low-volume areas and the impact of island geography on delivery efficiency.
+
+**[Attribute Testing](notebooks/attribute_testing.ipynb):** Testing the impact of product attributes(weight, lenght, width, height), and distance(seller to customer) on delivery time.
 
 ## :mag: Key Findings
 
-1. **The Sunday "FIFO" Failure**\
-Orders reaching carriers on Sunday suffer a **double mean delivery time (12 days)**. Because the system pauses on weekends, Sunday orders are likely buried by fresh Monday volume. This **First-In, Last-Out (FILO)** behavior turns a 48-hour weekend break into a massive 12-day customer penalty.
+1. **The Weekend Operational Standstill**\
+Data reveals a near-total cessation of logistics activity during weekends.
+   * **Acceptance Gap:** Saturday volume is only ~10% of weekday levels. Remarkably, only 36 orders were accepted on Sundays across all 27 states over the 3-year period.
+   * **Delivery Dead Zone:** Sunday deliveries are nearly non-existent. This 48-hour pause triggers a 12-day cascading penalty for Sunday orders; buried by Monday’s fresh volume (FIFO failure), a brief pause becomes a major delay.
 
-3. **The "Late-Shift" Inefficiency**\
+2. **The "Late-Shift" Inefficiency**\
 Data reveals a rigid, late-leaning delivery window from **12:00 PM to 12:00 AM**.
    * **Sorting Lag**: Starting deliveries at midday suggests that local hubs spend the most productive morning hours on internal sorting rather than transit.
 
@@ -56,7 +75,7 @@ Regional analysis proves that "Total Days" is a misleading metric:
    * **Low-Velocity South-East**: Areas closest to hubs have the lowest velocity. This signals intense urban friction (traffic and high-density drop-offs). The current midday start likely forces drivers into peak afternoon traffic, further degrading speed.
 
 4. **Routing-Driven "Logistics Sinks"**\
-Low-volume and island municipalities (specifically in SP and RJ) face severe delays. These areas lack the volume for frequent dispatches, forcing orders to wait at hubs for "batch routing" regardless of when the customer ordered.
+Low-volume and island municipalities (specifically in RJ) face severe delays. These areas lack the volume for frequent dispatches, forcing orders to wait at hubs for "batch routing" regardless of when the customer ordered.
 
 5. **Product Attribute Neutrality**\
 Analysis showed **no strong correlation** between product weight, dimensions, and delivery speed. Bottlenecks are entirely **Schedule and Process-driven**, not cargo-dependent.
