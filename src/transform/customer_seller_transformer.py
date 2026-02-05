@@ -1,6 +1,7 @@
 import pandas as pd
 import logging
 import os
+import h3
 from src.utils.read_datasets import read_customers, read_orders, read_orders_sellers
 
 class CustomerSellerTransformer():
@@ -27,6 +28,7 @@ class CustomerSellerTransformer():
         df = self._merge_customers(df)
         df = self._merge_sellers(df)
         df = self._drop_columns(df)
+        df = self._add_dist_column(df)
         self._save_to_disk(df)
     
     def _remove_rows(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -54,6 +56,11 @@ class CustomerSellerTransformer():
         df = df.drop(columns=cols, axis=1)
         return df
     
+    def _add_dist_column(self, df: pd.DataFrame) -> pd.DataFrame:
+        df['dist'] = df.apply(lambda row: h3.great_circle_distance(
+            (row['cus_lat'], row['cus_lng']), 
+            (row['seller_lat'], row['seller_lng'])), axis=1)
+        return df
     
     def _save_to_disk(self, df: pd.DataFrame) -> None:
         df.to_csv(self.save_path, index=False)

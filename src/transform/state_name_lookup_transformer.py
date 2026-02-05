@@ -36,7 +36,7 @@ class StateNameTransformer():
         return pd.read_csv(self.read_path)
     
     def _drop_columns(self, df: pd.DataFrame) -> pd.DataFrame:
-        selected_columns = [df.columns[0], df.columns[1]]
+        selected_columns = [df.columns[0], df.columns[1], df.columns[3]]
         return df[selected_columns].copy()
     
     def _drop_rows(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -47,7 +47,7 @@ class StateNameTransformer():
         return df.drop([0, 1], axis = 0)
 
     def _clean_column_names(self, df: pd.DataFrame) -> pd.DataFrame:
-        df.columns = ['state_id', 'state_name']
+        df.columns = ['state_id', 'state_name', 'region']
         return df
     
     def _replace_names(self, df: pd.DataFrame) -> pd.DataFrame:
