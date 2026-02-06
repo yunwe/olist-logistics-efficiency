@@ -1,37 +1,141 @@
+.<p align="center">
+  <img src="images/logo.png" alt="Logo" width="300"/>
+</p>
+<h1 align="center"> Delivery Delays Root Cause Analysis </h1>
 
-# Logistics Operations: Diagnostic Analysis Report
+##  Project Overview
+**Olist** is a major Brazilian e‑commerce platform that connects small and medium sellers to customers through a unified marketplace and logistics network. Despite its scale, Olist has faced serious delivery challenges, with some orders experiencing extreme delays—reaching up to 200 days in the most severe cases. These delays harm customer trust and strain operations, making it urgent to understand their root causes. 
 
-## :clipboard: Project Overview
+This project analyzes the Olist Brazilian E‑Commerce Dataset, containing nearly 100,000 orders from 2016–2018, to uncover why such delays occur and how they can be mitigated.
 
-This project performs a deep-dive diagnostic analysis into delivery efficiency for Olist| Brazilian E-Commerce. The goal is to identify why specific orders experience extreme delays ("long-tail outliers") and to provide data-driven recommendations for operational improvement.
+Key findings are as follow:
+* **Weekend operations nearly halt**, with Sundays almost inactive
+* **Sunday backlogs cascade into long delays** due to FIFO failures
+* **Midday delivery starts** force routes into peak urban traffic
+* **Urban areas near hubs** show the **lowest delivery velocity**
+* **Routing‑driven logistics sinks** trap low‑volume and remote areas, delaying dispatch
+
+##  Insights
+<h3>The Weekend Operational Standstill</h3>
+The data shows that logistics activity nearly stops on weekends, creating a structural pause in the fulfillment pipeline. Order intake collapses on Saturday and becomes almost nonexistent on Sunday, which then triggers downstream delays once operations resume.
+
+<h4>Supporting Evidence</h4>
+<ul>
+    <li><b>Order acceptance on Saturday is ~10% of weekday levels</b>, indicating a sharp reduction in facility intake capacity over the weekend.</li>
+    <li>Across a <b>3‑year period</b>, only <b>36 orders were accepted</b> on Sundays across all 27 states, showing Sunday processing is effectively shut down.</li>
+    <li>Customer deliveries also drop: <b>Saturday deliveries are ~30% of weekday levels</b>, while <b>Sunday delivery is nearly non-existent</b>.</li>
+</ul>
+
+<h4>Customer Impact (Delay Penalty)</h4>
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="images/delivered_carrier_day.png" alt="Logo" height="300"/>
+    </td>
+    <td width="50%" valign="middle">
+      The standstill does not just “pause” orders—it amplifies delays. 
+      Orders that reach carriers on Sunday experience a <b>double mean delivery time of 12 days.</b>
+    </td>
+  </tr>
+</table>
+
+<h4>Evidence of a First‑In, Last‑Out Backlog Effect</h4>
+
+<table>
+  <tr>
+    <td width="50%" valign="middle">
+This effect is further reinforced by the observed wait‑time distribution by order day. <br>
+Orders placed on <b>Friday and Saturday consistently experience the longest waiting periods</b>, indicating that they enter the system just before the weekend pause. <br>
+When operations resume, these early orders are systematically overtaken by higher‑volume weekday intake, providing clear empirical evidence of a <b>First‑In, Last‑Out (FILO)</b> backlog dynamic.
+    </td>
+    <td width="50%" align="center">
+      <img src="images/order_purchased_day.png" alt="Logo" height="300"/>
+    </td>
+  </tr>
+</table>
+
+<h3>Capacity Breakdown Under Demand Surge</h3>
+<p align="center">
+  <img src="images/workload.png" alt="Logo" />
+</p>
+<p>To isolate structural effects, the analysis focuses on the period from June 2017 to July 2018. From July through November, delivery performance remains stable, with average delivery time holding at approximately 10 days. In November, a sudden surge in demand—nearly triple the normal order volume—pushed the delivery system beyond its operating capacity. Despite the team doubling throughput to nearly 2,000 parcels per week, average delivery time still rose to over 15 days.<p>
+<p>As incoming demand later stabilized at around 1,500 orders per week, the system failed to fully recover. The accumulated backlog continued to grow, driving delivery time to a peak of 19 days by the end of February. Only by early April was the delivery debt finally cleared, returning average delivery time to its baseline. In total, the system remained under stress for more than four months.<p>
+<p><b>Note:</b> These dynamics indicate a <b>clear capacity threshold: </b> when weekly volume exceeds <b>approximately 2,000 orders </b>, backlog accumulation accelerates and recovery becomes slow and prolonged.<p>
+ 
+<h3>Late-Shift Delivery Window</h3>
+<p align="center">
+  <img src="images/workhours.png" alt="Logo" />
+</p>
+<p>
+Delivery activity follows a rigid, late‑leaning operational window from <b>noon to midnight</b>.
+</p>
+<p>
+This structure implies that local hubs spend the most productive morning hours on internal sorting rather than outbound transit, delaying route initiation. As routes begin near midday, vehicles are pushed directly into <b>peak urban congestion </b>, reducing delivery velocity. Extending operations toward midnight further signals difficulty clearing daily volume within standard hours, highlighting systemic inefficiencies in last‑mile scheduling.
+</p>
 
 
 
+<h3>The Velocity Paradox: Long-Haul vs. Urban Friction</h3>
 
-## :bar_chart: Data Source
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <td width="500" valign="top">
+      <img src="images/regional_analysis.png" width="500" alt="Regional Analysis Chart">
+    </td>
+    <td rowspan="2" valign="top" style="padding-left: 20px;">
+      <img src="images/table.png" width="500" alt="Data Table" style="margin-top: 10px;">
+      <p>
+        The <b>South‑East</b> region functions as the operational powerhouse, accounting for nearly <b>70% of total order volume</b>. While it achieves the shortest delivery times, it paradoxically records the lowest efficiency in terms of delivery speed (km/hr), reflecting heavy urban friction and congestion.
+      </p>
+      <p>
+        In contrast, the North—despite being the farthest region and contributing less than 2% of total orders—achieves the highest efficiency score, highlighting how low volume and uncongested routes enable faster transit over longer distances.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td width="500"></td>
+  </tr>
+</table>
+
+<h3>Routing-Driven "Logistics Sinks"</h3>
+
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <td width="500" valign="top">
+      <img src="images/state_sp.png" width="500" alt="Regional Analysis Chart">
+    </td>
+    <td width="500" valign="top">
+      <img src="images/state_rio.png" width="500" alt="Regional Analysis Chart">
+    </td>
+  </tr>
+  <tr>
+    <td colspan=2>
+      <p>
+        Low‑volume municipalities in São Paulo (SP), particularly those distant from the São Paulo metropolitan center, experience the most severe delivery delays. Sparse demand in these regions prevents frequent dispatches, causing orders to accumulate at hubs until batch‑routing thresholds are met. As a result, delivery timing is dictated by routing efficiency rather than order placement, leading to prolonged wait times.
+      </p>
+    </td>
+  </tr>
+</table>
+
+## Strategic Recommendations
+
+1. **Shift Dispatch to "Early-Bird" Hours**: Move the local hub sorting process to night shifts to allow drivers to depart by 8:00 AM. This would bypass peak afternoon traffic and ensure deliveries are completed by a customer-friendly 8:00 PM cutoff.
+
+2. **Enforce FIFO Priority**: Implement a strict First-In, First-Out rule for Monday mornings to ensure weekend backlogs are processed before new Monday arrivals.
+
+3. **Scheduled vs. Volume-Based Routing**: For "orphan" municipalities in SP and RJ, transition from volume-based dispatch (waiting for a full truck) to a fixed-schedule rotation to eliminate long-tail wait times.
+
+## Data Source
 
 The analysis is based on the Olist Brazilian E-Commerce Dataset, which contains information on approximately 100,000 orders from 2016 to 2018.
 
 **Dataset Origin:** [Kaggle - Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
- 
-
 **Data Volume:** 100k+ orders across 73 product categories.
 
-**Key Features utilized:** Order timestamps, customer/seller location, freight value, and product dimensions.
+## Tech Stack
 
-
-## :globe_with_meridians: Supplemental Data
-
-[Geodata](https://github.com/luizpedone/municipal-brazilian-geodata): To enhance the visualization with folium and choropleth map, I added geojson files. 
-
-
-[Brazil Help](https://brazil-help.com/brazilian_states.htm): I implemented web scraping to encode states into 5 regional levels, and adding acronyms columns which help merging with geojson files.
-
-
-
-## :hammer_and_wrench: Tech Stack
-
-**Language:** Python 3.10+
+**Tools:** Python, Power BI, Statistics
 
 **Data Manipulation:** pandas, numpy
 
@@ -39,61 +143,27 @@ The analysis is based on the Olist Brazilian E-Commerce Dataset, which contains 
 
 **Statistical Testing:** scipy.stats (Chi-Squared, Correlation analysis)
 
+
 **Visualization:** matplotlib, seaborn, folium
 
-**Web Scraping:** BeautifulSoup, requests
+## Analysis Files
+
+**EDA & Data Hygiene**: Auditing for batch updates and identifying reporting lag patterns.
+
+**Temporal Analysis**: Investigating the Sunday 12-day penalty and weekday delivery windows.
+
+**Spatial Velocity & Mapping**: GeoPandas mapping of SP and RJ and calculating the "Velocity Paradox" across regions.
+
+**[Product & Attribute Testing](notebooks/product_attribute_testing.ipynb):** Testing the impact of product attributes(weight, lenght, width, height), and distance(seller to customer) on delivery time.
 
 
-## :file_folder: Analysis Report
-
-**[Data Hygiene](notebooks/data_hygiene.ipynb)**: Auditing for batch updates and identifying reporting lag patterns.
-
-**[Temporal Analysis](notebooks/temporal_analysis.ipynb):** An evaluation of systemic operations, identifying a rigid midday-to-midnight delivery schedule. Featuring a comparative gap analysis of order registration vs final delivery volume.
-
-**[Regional Performance & Velocity](notebooks/regional_performance.ipynb):** The "Velocity Paradox" at the state and regional levels. A comparison of raw delivery times vs. normalized speed ($km/hr$) across the 5 main Brazilian regions.
-
-**[Deep Dive: SP & RJ Analysis](notebooks/sp_rj.ipynb):** Municipality-level friction mapping for São Paulo and Rio de Janeiro. Identification of "Logistics Sinks" in low-volume areas and the impact of island geography on delivery efficiency.
-
-**[Attribute Testing](notebooks/attribute_testing.ipynb):** Testing the impact of product attributes(weight, lenght, width, height), and distance(seller to customer) on delivery time.
-
-## :mag: Key Findings
-
-1. **The Weekend Operational Standstill**\
-Data reveals a near-total cessation of logistics activity during weekends.
-   * **Acceptance Gap:** Saturday volume is only ~10% of weekday levels. Remarkably, only 36 orders were accepted on Sundays across all 27 states over the 3-year period.
-   * **Delivery Dead Zone:** Sunday deliveries are nearly non-existent. This 48-hour pause triggers a 12-day cascading penalty for Sunday orders; buried by Monday’s fresh volume (FIFO failure), a brief pause becomes a major delay.
-
-2. **The "Late-Shift" Inefficiency**\
-Data reveals a rigid, late-leaning delivery window from **12:00 PM to 12:00 AM**.
-   * **Sorting Lag**: Starting deliveries at midday suggests that local hubs spend the most productive morning hours on internal sorting rather than transit.
-
-   * **Customer Friction**: Ending the window at midnight likely conflicts with residential sleep norms, suggesting the "last-mile" is struggling to clear daily volume within standard hours.
-
-3. **The Velocity Paradox: Long-Haul vs. Urban Friction**\
-Regional analysis proves that "Total Days" is a misleading metric:
-   * **High-Velocity North**: Despite long durations, the North is highly efficient over distance.
-   * **Low-Velocity South-East**: Areas closest to hubs have the lowest velocity. This signals intense urban friction (traffic and high-density drop-offs). The current midday start likely forces drivers into peak afternoon traffic, further degrading speed.
-
-4. **Routing-Driven "Logistics Sinks"**\
-Low-volume and island municipalities (specifically in RJ) face severe delays. These areas lack the volume for frequent dispatches, forcing orders to wait at hubs for "batch routing" regardless of when the customer ordered.
-
-5. **Product Attribute Neutrality**\
-Analysis showed **no strong correlation** between product weight, dimensions, and delivery speed. Bottlenecks are entirely **Schedule and Process-driven**, not cargo-dependent.
-
-## :rocket: Strategic Recommendations
-
-1. **Shift Dispatch to "Early-Bird" Hours**: Move the local hub sorting process to night shifts to allow drivers to depart by 8:00 AM. This would bypass peak afternoon traffic and ensure deliveries are completed by a customer-friendly 8:00 PM cutoff.
-
-2. **Enforce FIFO Priority**: Implement a strict First-In, First-Out rule for Monday mornings to ensure weekend backlogs are processed before new Monday arrivals.
-
-3. **Scheduled vs. Volume-Based Routing**: For "orphan" municipalities in SP and RJ, transition from volume-based dispatch (waiting for a full truck) to a fixed-schedule rotation to eliminate long-tail wait times.
-## :crystal_ball: Future Work
+## Future Work
 
 1. **Predictive Modeling (Regression Analysis)**
 Build a Multiple Linear Regression model to quantify the exact weight of the "Sunday Penalty" on delivery timelines.
 
 
-## :bust_in_silhouette: Author
+## Author
 
 Saw Yu Nwe
 
