@@ -148,14 +148,15 @@ The analysis is based on the Olist Brazilian E-Commerce Dataset, which contains 
 
 ## Analysis Files
 
-**EDA & Data Hygiene**: Auditing for batch updates and identifying reporting lag patterns.
+**[EDA & Data Hygiene](notebooks/data_hygiene.ipynb)**: Auditing for batch updates and identifying reporting lag patterns.
 
-**Temporal Analysis**: Investigating the Sunday 12-day penalty and weekday delivery windows.
+**[Temporal Analysis](notebooks/temporal_analysis.ipynb)**: Investigating the Sunday 12-day penalty, weekday delivery windows, and weekly delivery capacity.
 
-**Spatial Velocity & Mapping**: GeoPandas mapping of SP and RJ and calculating the "Velocity Paradox" across regions.
+**[Spatial Velocity & Mapping](notebooks/regional_performance.ipynb)**: Calculating the "Velocity Paradox" across regions.
 
-**[Product & Attribute Testing](notebooks/product_attribute_testing.ipynb):** Testing the impact of product attributes(weight, lenght, width, height), and distance(seller to customer) on delivery time.
+**[Product & Attribute Testing](notebooks/attribute_testing.ipynb):** Testing the impact of product attributes(weight, lenght, width, height), and distance(seller to customer) on delivery time.
 
+**[Analysis of Most Impactful Regions, SP & RJ](notebooks/sp_rj.ipynb):** Analyze the characteristics of the municipalities that experience the most severe delays in the São Paulo and Rio de Janeiro regions.
 
 ## Future Work
 
